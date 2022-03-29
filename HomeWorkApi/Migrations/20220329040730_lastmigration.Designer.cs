@@ -9,8 +9,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace HomeWorkApi.Migrations
 {
     [DbContext(typeof(UserDbContext))]
-    [Migration("20220314021133_firstmigration")]
-    partial class firstmigration
+    [Migration("20220329040730_lastmigration")]
+    partial class lastmigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,6 +28,7 @@ namespace HomeWorkApi.Migrations
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("FirstName")
