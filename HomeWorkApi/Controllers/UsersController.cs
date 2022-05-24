@@ -3,6 +3,8 @@ using System.Threading.Tasks;
 using Homework.Api.Service.Interfaces;
 using Homework.Api.Service.ViewModels;
 using Homework.Api.Services.Services;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace Homework.Api.Controllers
 {
@@ -72,5 +74,62 @@ namespace Homework.Api.Controllers
 
             return user == null ? NotFound("User not found") : Ok(user);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Asadbek()
+        {
+
+
+
+            IList<Cash> cashs = new List<Cash>()
+            {
+                new Cash()
+                {
+                  Id = "1",
+                  KassaNomi = "Kassa 1",
+                  Valyuta = "uz",
+                  Kirim = "1233",
+                  Chiqim = "1233",
+                  BoshlangichQoldiq = "1233",
+                  OxirgiQoldiq = "1233",
+                },
+                new Cash()
+                {
+                  Id = "2",
+                  KassaNomi = "Kassa 2",
+                  Valyuta = "$",
+                  Kirim = "12333773",
+                  Chiqim = "12322823",
+                  BoshlangichQoldiq = "1232343",
+                  OxirgiQoldiq = "1232233",
+                },
+                new Cash()
+                {
+                  Id = "3",
+                  KassaNomi = "Kassa 2",
+                  Valyuta = "uz",
+                  Kirim = "1233",
+                  Chiqim = "1233",
+                  BoshlangichQoldiq = "1233",
+                  OxirgiQoldiq = "1233",
+                },
+            };
+
+
+            return Ok(cashs);
+        }
+
+    }
+
+
+    public class Cash
+    {
+        public string Id { get; set; }
+        public string KassaNomi { get; set; }
+        public string Valyuta { get; set; }
+        public string BoshlangichQoldiq { get; set; }
+        public string Kirim { get; set; }
+        public string Chiqim { get; set; }
+        public string OxirgiQoldiq { get; set; }
     }
 }
